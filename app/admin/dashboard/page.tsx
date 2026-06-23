@@ -12,7 +12,7 @@ export default function DashboardHub() {
   useEffect(() => {
     async function fetchRates() {
       try {
-        const response = await fetch('http://localhost:5000/api/rates');
+        const response = await fetch('https://at-dey-backend.onrender.com/api/inventory');
         const data = await response.json();
         let foundGold = false;
         let foundSilver = false;

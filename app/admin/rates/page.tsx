@@ -12,7 +12,7 @@ export default function RatesManager() {
   useEffect(() => {
     async function fetchRates() {
       try {
-        const response = await fetch('http://localhost:5000/api/rates');
+        const response = await fetch('https://at-dey-backend.onrender.com/api/inventory');
         const data = await response.json();
         data.forEach((item: any) => {
           if (item.metal === 'GOLD_24K') setGoldRate(item.price.toString());
@@ -26,7 +26,7 @@ export default function RatesManager() {
   const handleUpdateRate = async (metalType: string, price: string) => {
     setMessage(`Updating ${metalType.replace('_', ' ')}...`);
     try {
-      const response = await fetch('http://localhost:5000/api/rates', {
+      const response = await fetch('https://at-dey-backend.onrender.com/api/inventory', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ metal: metalType, price: parseFloat(price) }),

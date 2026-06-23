@@ -36,7 +36,7 @@ export default function ValuationCalculator() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/valuate', {
+      const response = await fetch('https://at-dey-backend.onrender.com/api/inventory', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

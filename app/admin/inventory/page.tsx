@@ -24,7 +24,7 @@ export default function InventoryManager() {
 
   const fetchInventory = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/inventory');
+      const response = await fetch('https://at-dey-backend.onrender.com/api/inventory');
       const data = await response.json();
       setInventory(data);
     } catch (err) {
@@ -91,7 +91,7 @@ export default function InventoryManager() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/inventory', {
+      const response = await fetch('https://at-dey-backend.onrender.com/api/inventory', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
